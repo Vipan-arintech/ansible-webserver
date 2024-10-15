@@ -2,12 +2,5 @@
 
 # Specify which linting rules to ignore
 skip_list:
-  - '403'  # Ignore warnings about using 'latest' in package installations
-  - '301'  # Ignore warnings about module names not being the latest version
-
-# Specify additional settings for ansible-lint
-warn_list:
-  - '403'  # Warn about using 'latest' in package installations
-  - '301'  # Warn about module names not being the latest version
-
-# You can add more custom rules or settings as needed
+  - '403'
+  - '301'
