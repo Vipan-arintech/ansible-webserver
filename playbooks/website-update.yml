@@ -1,4 +1,4 @@
---
+---
 - name: Update website content
   hosts: webservers
   become: yes  # Use 'become' to escalate privileges if necessary
