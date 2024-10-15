@@ -1,0 +1,8 @@
+--
+- name: Update website content
+  hosts: webservers
+  become: yes  # Use 'become' to escalate privileges if necessary
+  become_user: root
+
+  roles:
+    - website

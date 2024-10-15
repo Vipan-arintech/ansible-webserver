@@ -1,0 +1,19 @@
+---
+ - name: Set index.html path
+   set_fact:
+     file_path: /var/www/html
+
+ - name: Copy bars.html
+   copy:
+     src: vars.html
+     dest: "{{ file_path }}/vars.html"
+     owner: root
+     group: root
+     mode: 0755
+
+ - name: Add a link from index.html to vars.html
+   lineinfile:
+     path: "{{ file_path }/index.html"
+     line: <a href=vars.html>Ansible Variables Page </a>
+     insertafter: EOF
+     ignore_errors: "{{ ansible_check_mode }}"

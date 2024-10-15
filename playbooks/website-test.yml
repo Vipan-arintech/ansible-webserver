@@ -1,0 +1,19 @@
+---
+- name: Test website
+  hosts: webservers
+  become: yes
+  become_user: root
+  tasks:
+
+    - name: Wait for the web server to be reachable
+      wait_for:
+        port: 80
+        state: started
+        timeout: 3
+
+    - name: Verify website is reachable
+      uri:
+        url: http://{{ ansible_host }}/index.html
+        delegate_to: localhost
+
+
